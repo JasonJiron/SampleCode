@@ -34,10 +34,11 @@ hbs.registerHelper('screamIt', (text) => {
   return text.toUpperCase();
 });
 
+
 app.get('/', (req,res) => {
   // res.send('<h1>Jello Express</h1>');
   res.render('home.hbs', {
-    pageTitle: 'Home using HBS',
+    pageTitle: 'Home',
     welcomeMessage: 'Welcome to my awesome site'
   });
 });
@@ -45,6 +46,12 @@ app.get('/', (req,res) => {
 app.get('/about', (req,res) => {
   res.render('about.hbs', {
     pageTitle: 'About Page',
+  });
+});
+
+app.get('./projects', (req,res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects'
   });
 });
 
